@@ -2,24 +2,37 @@
 
 [ext_resource type="PackedScene" uid="uid://x71lvbuk6pil" path="res://player.tscn" id="1_ig7tw"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_5mlvf"]
+[sub_resource type="BoxMesh" id="BoxMesh_g8nd7"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_4p52m"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_5mlvf"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_twidl"]
+
+[sub_resource type="Sky" id="Sky_cahdd"]
+sky_material = SubResource("ProceduralSkyMaterial_twidl")
+
+[sub_resource type="Environment" id="Environment_g8nd7"]
+background_mode = 2
+sky = SubResource("Sky_cahdd")
 
 [node name="Main" type="Node3D" unique_id=731745434]
 
-[node name="Ground" type="StaticBody3D" parent="." unique_id=1314558967]
+[node name="Ground" type="StaticBody3D" parent="." unique_id=368217351]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground" unique_id=1704476006]
-transform = Transform3D(24, 0, 0, 0, 1, 0, 0, 0, 24, 0, -0.5, 0)
-mesh = SubResource("BoxMesh_5mlvf")
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground" unique_id=1008659578]
+transform = Transform3D(40, 0, 0, 0, 1, 0, 0, 0, 40, 0, 0, 0)
+mesh = SubResource("BoxMesh_g8nd7")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground" unique_id=1823081339]
-transform = Transform3D(24, 0, 0, 0, 1, 0, 0, 0, 24, 0, -0.5, 0)
-shape = SubResource("BoxShape3D_4p52m")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground" unique_id=1909965219]
+transform = Transform3D(40, 0, 0, 0, 1, 0, 0, 0, 40, 0, 0, 0)
+shape = SubResource("BoxShape3D_5mlvf")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1056217852]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1690933020]
 transform = Transform3D(0.8660254, 0.35355338, -0.35355338, 0, 0.70710677, 0.70710677, 0.5, -0.6123724, 0.6123724, 0, 0, 0)
 
-[node name="Player" parent="." unique_id=928737251 instance=ExtResource("1_ig7tw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=542789857]
+environment = SubResource("Environment_g8nd7")
+
+[node name="Player" parent="." unique_id=1241555154 instance=ExtResource("1_ig7tw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
