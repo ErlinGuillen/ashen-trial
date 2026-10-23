@@ -4,6 +4,7 @@
 
 [sub_resource type="BoxMesh" id="BoxMesh_5mlvf"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_4p52m"]
 
 [node name="Main" type="Node3D" unique_id=731745434]
 
