@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://bgh0wsig544mu"]
+
+[ext_resource type="PackedScene" uid="uid://x71lvbuk6pil" path="res://player.tscn" id="1_ig7tw"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_5mlvf"]
+
+
+[node name="Main" type="Node3D" unique_id=731745434]
+
+[node name="Ground" type="StaticBody3D" parent="." unique_id=1314558967]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground" unique_id=1704476006]
+transform = Transform3D(24, 0, 0, 0, 1, 0, 0, 0, 24, 0, -0.5, 0)
+mesh = SubResource("BoxMesh_5mlvf")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground" unique_id=1823081339]
+transform = Transform3D(24, 0, 0, 0, 1, 0, 0, 0, 24, 0, -0.5, 0)
+shape = SubResource("BoxShape3D_4p52m")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1056217852]
+transform = Transform3D(0.8660254, 0.35355338, -0.35355338, 0, 0.70710677, 0.70710677, 0.5, -0.6123724, 0.6123724, 0, 0, 0)
+
+[node name="Player" parent="." unique_id=928737251 instance=ExtResource("1_ig7tw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
